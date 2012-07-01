@@ -1,0 +1,9 @@
+<%= simple_form_for @job do |f| %>
+  <%= f.input :name, :label => 'Название', :hint => 'Например Покраска пола',
+    :input_html => { :class => 'span8' } %>
+    <%= f.input :description, :label => 'Описание работ', :as => :text,
+      :input_html => { :class => 'span8' } %>
+  <%= f.input :location, :label => 'Город',
+      :input_html => { :class => 'span8' } %>
+  <%= f.button :submit, 'Создать', :class => 'btn-success' %>
+<% end %>

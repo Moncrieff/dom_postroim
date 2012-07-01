@@ -1,8 +1,14 @@
-<table class='jobs'>
-  <tr>
-    <th>Работа</th>
-  </tr>
-  <tr>
-    <td><% @jobs.each do |job| %><%= job.name %><% end %></td>
-  </tr>
-</table>
+<% @jobs.each do |job| %>
+  <div class='row'>
+    <div class='span8' style='border: 1px solid #08c'>
+      <h3><%= link_to job.name, job_path(job) %></h3>
+      <div class='row'>
+        <div class='span4'>
+          <address><%= job.location %></address>
+        </div>
+      </div>
+      <%= job.description %>
+    </div>
+  </div>
+<% end %>
+<%= link_to 'Новая заявка', new_job_path, :id => 'новая заявка' %>
