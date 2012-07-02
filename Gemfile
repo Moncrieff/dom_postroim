@@ -29,6 +29,7 @@ group :test, :development do
   gem 'rspec-rails', '~>2.0'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'email_spec'
 end
 
 group :test do
