@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :role
   # attr_accessible :title, :body
 
   def self.find_first_by_auth_conditions(warden_conditions)
