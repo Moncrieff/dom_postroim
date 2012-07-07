@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates :role, :presence => true
+  has_many :comments
 
   attr_accessor :login
 

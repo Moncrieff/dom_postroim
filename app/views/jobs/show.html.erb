@@ -10,3 +10,9 @@
     <%= @job.description %>
   </div>
 </div>
+<div class='row'>
+  <div class='span8'>
+    <%= link_to 'Задать вопрос', new_job_comment_path(@job) %>
+    <%= render 'comments' %>
+  </div>
+</div>

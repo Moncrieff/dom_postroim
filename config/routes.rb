@@ -6,6 +6,9 @@ DomPostroim::Application.routes.draw do
     match 'new/:role' => 'devise/registrations#new', :as => 'sign_up'
   end
 
-  resources :jobs
+  resources :jobs do
+    resources :comments
+  end
+
   root :to => 'jobs#index'
 end
