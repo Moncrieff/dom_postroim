@@ -7,8 +7,8 @@
           <li class='navbar-text nav pull-right'><%= current_user.username %></li>
           <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
         <% else %>
-          <li><%= link_to 'Зарегистрироваться как заказчик', new_user_registration_path %></li>
-          <li><%= link_to 'Зарегистрироваться как подрядчик', tradesman_sign_up_path %></li>
+          <li><%= link_to 'Зарегистрироваться как заказчик', sign_up_path(:role => 'homeowner') %></li>
+          <li><%= link_to 'Зарегистрироваться как подрядчик', sign_up_path(:role => 'tradesman') %></li>
           <li><%= link_to 'Войти', new_user_session_path(current_user) %></li>
         <% end %>
       </ul>

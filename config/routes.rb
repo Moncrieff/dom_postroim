@@ -1,9 +1,9 @@
 DomPostroim::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'devise/registrations' }
 
   devise_scope :user do
-    match 'tradesman/sign_up' => 'devise/registrations#new', :user => { :role => 'tradesman' }
+    match 'new/:role' => 'devise/registrations#new', :as => 'sign_up'
   end
 
   resources :jobs

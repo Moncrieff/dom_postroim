@@ -7,7 +7,7 @@
   <%= f.input :email, :required => true %>
   <%= f.input :password, :label => 'Пароль', :required => true %>
   <%= f.input :password_confirmation, :label => 'Повторите пароль', :required => true %>
-  <%= f.input :role, :as => :hidden, :input_html => { :value => 'homeowner' } %>
+  <%= f.input :role, :as => :hidden, :input_html => { :value => params[:role] } %>
 
   <%= f.button :submit, 'Зарегистрироваться', :class => 'btn-success' %>
 <% end %>
