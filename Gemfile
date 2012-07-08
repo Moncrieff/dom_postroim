@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'cancan'
 
 group :test, :development do
   gem 'rspec-rails', '~>2.0'
@@ -34,6 +35,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'factory_girl'
 end
 

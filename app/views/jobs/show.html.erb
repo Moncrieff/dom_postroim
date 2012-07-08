@@ -1,4 +1,7 @@
 <h2><%= @job.name %></h2>
+<div><%= link_to 'Изменить', edit_job_path(@job) %></div>
+<div><%= link_to 'Удалить', job_path(@job), :method => :delete, :data => { :confirm => 'Ваша заявка будет удалена. Продолжить?' }, 
+        :class => 'btn-danger' %></div>
 <div class="row">
   <div class="span4">
     <strong>Город:</strong> <%= @job.location %>

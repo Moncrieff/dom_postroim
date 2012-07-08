@@ -4,7 +4,7 @@ require 'spec_helper'
 describe 'an unauthenticated user' do
 
   let(:user) do
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:homeowner)
     user.confirm!
     user
   end
