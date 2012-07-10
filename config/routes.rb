@@ -6,8 +6,11 @@ DomPostroim::Application.routes.draw do
     match 'new/:role' => 'devise/registrations#new', :as => 'sign_up'
   end
 
+  match 'jobs/:job_id/bids/:id/accept' => 'bids#accept', :as => 'accept_bid'
+
   resources :jobs do
-    resources :comments
+    resources :comments, :only => [:new, :create]
+    resources :bids, :only => [:new, :create]
   end
 
   root :to => 'jobs#index'

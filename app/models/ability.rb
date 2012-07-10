@@ -6,6 +6,7 @@ class Ability
 
     if user.role? :tradesman
       can :read, :all
+      can :create_bid_for_job, Job
     end
 
     if user.role? :homeowner
@@ -13,6 +14,7 @@ class Ability
       can :create, Job
       can :update, Job, :user_id => user.id
       can :destroy, Job, :user_id => user.id
+      can :accept_bids, Job, :user_id => user.id
     end
     # Define abilities for the passed in user here. For example:
     #

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708094854) do
+ActiveRecord::Schema.define(:version => 20120709033922) do
+
+  create_table "bids", :force => true do |t|
+    t.string   "cost"
+    t.string   "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.boolean  "accepted"
+  end
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -31,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120708094854) do
     t.string   "description"
     t.string   "location"
     t.integer  "user_id"
+    t.boolean  "accepted"
   end
 
   create_table "users", :force => true do |t|

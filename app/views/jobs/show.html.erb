@@ -2,6 +2,7 @@
 <div><%= link_to 'Изменить', edit_job_path(@job) %></div>
 <div><%= link_to 'Удалить', job_path(@job), :method => :delete, :data => { :confirm => 'Ваша заявка будет удалена. Продолжить?' }, 
         :class => 'btn-danger' %></div>
+      <div><%= link_to 'Откликнуться', new_job_bid_path(@job), :class => 'btn-info' %></div>
 <div class="row">
   <div class="span4">
     <strong>Город:</strong> <%= @job.location %>
@@ -11,6 +12,9 @@
   <div class="span8">
     <strong>Описание:</strong></br>
     <%= @job.description %>
+  </div>
+  <div class='span4'>
+    <%= render 'bids' %>
   </div>
 </div>
 <div class='row'>

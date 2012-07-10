@@ -1,0 +1,7 @@
+<%= simple_form_for [@job, @bid] do |f| %>
+  <%= f.input :cost, :label => 'Стоимость', :hint => 'Например от 5,000 до 7,000',
+    :input_html => { :class => 'span8' } %>
+    <%= f.input :comment, :label => 'Комментарий', :hint => 'Краткое пояснение такой цены',
+      :input_html => { :class => 'span8' } %>
+  <%= f.button :submit, 'Откликнуться', :class => 'btn-success' %>
+<% end %>

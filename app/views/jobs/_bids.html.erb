@@ -1,0 +1,15 @@
+<h2>Предложения от подрядчиков</h2>
+<% @job.bids.each do |bid| %>
+  <div class='span2'>
+    Стоимость:</br>
+    <ul>
+      <li><%= bid.cost %></li>
+    </ul>
+  </div>
+  <div class='span4'>
+    <%= bid.comment %>
+  </div>
+  <div class='span4'>
+    <%= link_to 'Принять', accept_bid_path(@job, bid), :method => :put, :class => 'btn-success' %>
+  </div>
+<% end %>
