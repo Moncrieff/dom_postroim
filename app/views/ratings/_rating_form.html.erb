@@ -1,0 +1,6 @@
+<%= simple_form_for [@job, @rating] do |f| %>
+  <%= f.input :evaluation, :label => 'Оценка', :collection => [['like', 'Понравилось'], ['didnt_like', 'Не понравилось']], :label_method => :last, :value_method => :first, :as => :radio %>
+  <% #f.input :evaluation, :label => 'Оценка', :as => :radio_buttons, :collection => Rating::EVALUATION, :value_method => ['Нра', 'Не нра'] %>
+  <%= f.input :comment, :label => 'Ваш отзыв', :placeholder => 'Краткий комментарий ...' %>
+  <%= f.submit 'Оставить отзыв' %>
+<% end %>

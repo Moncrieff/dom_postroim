@@ -11,6 +11,8 @@ DomPostroim::Application.routes.draw do
   resources :jobs do
     resources :comments, :only => [:new, :create]
     resources :bids, :only => [:new, :create]
+    resources :ratings, :only => [:new, :create, :index]
+    match 'complete' => 'jobs#complete'
   end
 
   root :to => 'jobs#index'

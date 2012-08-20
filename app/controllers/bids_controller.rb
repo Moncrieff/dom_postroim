@@ -12,7 +12,7 @@ class BidsController < ApplicationController
 
   def create
     authorize! :create_bid_for_job, @job
-    @bid = @job.bids.build(params[:bid].try(:merge!, :user_id => current_user))
+    @bid = @job.bids.build(params[:bid].try(:merge!, :user_id => current_user.id))
     if @bid.save
       flash[:notice] = 'Вы успешно откликнулись на заявку'
       redirect_to @job

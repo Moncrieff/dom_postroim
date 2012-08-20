@@ -26,6 +26,11 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @bids = @job.bids.where('accepted' => true)
+    @users = []
+    @bids.each do |bid|
+      @users << User.find_by_id(bid.user_id)
+    end
   end
 
   def edit
@@ -48,5 +53,13 @@ class JobsController < ApplicationController
     @job.destroy
     flash[:notice] = 'Вы удалили свою заявку'
     redirect_to jobs_path
+  end
+
+  def complete
+    @job = Job.find(params[:job_id])
+    #tradesman = 
+    @job.update_attributes(:complete => true)
+    flash[:notice] = 'Ваша работа завершена. Пожалуйста, оставьте отзыв о работе подрядчика.'
+    redirect_to @job
   end
 end

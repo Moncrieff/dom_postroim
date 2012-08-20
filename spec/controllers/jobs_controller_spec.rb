@@ -58,6 +58,8 @@ describe JobsController do
       delete :destroy, :id => job.id
       cannot_act_on_jobs!
     end
+
+    it 'cannot complete the job'
   end
 
   context 'homeowner' do
@@ -74,5 +76,7 @@ describe JobsController do
       delete :destroy, :id => another_job.id
       cannot_act_on_jobs!
     end
+
+    it 'cannot complete other homeowners jobs'
   end
 end

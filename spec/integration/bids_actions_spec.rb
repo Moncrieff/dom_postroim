@@ -4,7 +4,7 @@ require 'spec_helper'
 describe 'bids actions' do
   before(:all) do
     @job = FactoryGirl.create(:job, :user_id => homeowner.id)
-    @bid = FactoryGirl.create(:bid, :job_id => @job.id)
+    @bid = FactoryGirl.create(:bid, :job_id => @job.id, :user_id => tradesman.id)
   end
 
   let(:homeowner) do

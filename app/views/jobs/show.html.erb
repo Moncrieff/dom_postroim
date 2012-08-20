@@ -3,6 +3,8 @@
 <div><%= link_to 'Удалить', job_path(@job), :method => :delete, :data => { :confirm => 'Ваша заявка будет удалена. Продолжить?' }, 
         :class => 'btn-danger' %></div>
       <div><%= link_to 'Откликнуться', new_job_bid_path(@job), :class => 'btn-info' %></div>
+      <div><%= link_to 'Работа завершена', job_complete_path(@job), :method => :put %></div>
+      <div><%= render 'ratings' %>
 <div class="row">
   <div class="span4">
     <strong>Город:</strong> <%= @job.location %>

@@ -1,0 +1,3 @@
+<% @users.each do |user| %>
+  <%= link_to "Оставить отзыв для #{user.username}", new_job_rating_path(@job, :tradesman_id => user.id) %></br>
+<% end %>
