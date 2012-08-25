@@ -59,7 +59,10 @@ describe JobsController do
       cannot_act_on_jobs!
     end
 
-    it 'cannot complete the job'
+    it 'cannot complete the job' do
+      put :complete, :job_id => job.id
+      cannot_act_on_jobs!
+    end
   end
 
   context 'homeowner' do
@@ -77,6 +80,9 @@ describe JobsController do
       cannot_act_on_jobs!
     end
 
-    it 'cannot complete other homeowners jobs'
+    it 'cannot complete other homeowners jobs' do
+      put :complete, :job_id => another_job.id
+      response.should redirect_to(another_job)
+    end
   end
 end

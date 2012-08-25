@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class JobsController < ApplicationController
-  load_and_authorize_resource :only => [:new, :create, :edit, :destroy]
+  load_and_authorize_resource :only => [:new, :create, :edit, :destroy, :complete]
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to jobs_path, :alert => 'Вы не можете этого сделать.'
   end

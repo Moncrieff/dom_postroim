@@ -15,6 +15,7 @@ class Ability
       can :update, Job, :user_id => user.id
       can :destroy, Job, :user_id => user.id
       can :accept_bids, Job, :user_id => user.id
+      can :complete, Job, :user_id => user.id
     end
     # Define abilities for the passed in user here. For example:
     #

@@ -102,7 +102,7 @@ describe 'Jobs actions' do
       choose 'Понравилось'
       fill_in 'Ваш отзыв', :with => 'Очень хорошая работа.'
       click_on 'Оставить отзыв'
-      page.should have_content("Вы оставили отзыв о работнике #{tradesman.username}. Спасибо!")
+      page.should have_content("Вы оставили отзыв о работнике. Спасибо!")
     end
   end
 end
