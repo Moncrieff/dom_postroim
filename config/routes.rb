@@ -8,6 +8,8 @@ DomPostroim::Application.routes.draw do
 
   match 'jobs/:job_id/bids/:id/accept' => 'bids#accept', :as => 'accept_bid'
 
+  resources :users, :only => [:show]
+
   resources :jobs do
     resources :comments, :only => [:new, :create]
     resources :bids, :only => [:new, :create]

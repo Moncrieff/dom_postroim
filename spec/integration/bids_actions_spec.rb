@@ -46,6 +46,7 @@ describe 'bids actions' do
       page.should have_content('Вы успешно откликнулись на заявку')
       page.should have_content('3,000 - 5,000 руб.')
       page.should have_content('Стоимость сильно зависит от того, какие материалы у вас есть.')
+      page.should have_link(tradesman.username)
     end
 
     it 'should be able to delete own bid'

@@ -1,6 +1,7 @@
 <h2>Предложения от подрядчиков</h2>
 <% @job.bids.each do |bid| %>
   <div class='span2'>
+    <%= link_to User.find(bid.user_id).username, user_path(User.find(bid.user_id)) %> </br>
     Стоимость:</br>
     <ul>
       <li><%= bid.cost %></li>
